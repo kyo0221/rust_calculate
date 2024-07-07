@@ -2,10 +2,12 @@
 pub struct ConstantVal(i32);
 
 impl ConstantVal {
+    ///ConstantValを生成する
     pub fn new(val: i32) -> ConstantVal {
         ConstantVal(val)
     }
 
+    ///ConstantValの値を取得する
     pub fn get(&self) -> i32 {
         self.0
     }
