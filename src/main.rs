@@ -1,3 +1,6 @@
+pub mod calc;
+
 fn main() {
-    println!("Hello, world!");
+    let a = calc::ast::ConstantVal::new(33);
+    println!("ConstantVal={}", a.eval());
 }
