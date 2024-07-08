@@ -12,6 +12,14 @@ fn digit1_test() {
 
 use super::ast::*;
 
+///式のパーサ
+pub fn expr_parser(s: &str) -> IResult<&str, Expr> {
+    constant_val_parser(s)
+        .map(|(no_used, constant_val)|
+            (no_used, Expr::ConstantVal(constant_val))
+        )
+}
+
 ///定数のパーサ
 pub fn constant_val_parser(s: &str) -> IResult<&str, ConstantVal>{
     use std::str::FromStr;
